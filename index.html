@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú de Bebidas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="menu-container">
+        <h1>Menú de Bebidas</h1>
+        <div id="drink-menu"></div>
+    </div>
+
+    <script>
+        const drinks = [
+    {
+        name: "Café Espresso",
+        price: "$2.50",
+        image: "https://i0.wp.com/comohacercafe.com/wp-content/uploads/2020/03/espresso.jpeg?resize=1024%2C683&ssl=1"
+    },
+    {
+        name: "Té Verde",
+        price: "$3.00",
+        image: "https://static.tuasaude.com/media/article/yp/dt/beneficios-del-te-verde_17350_l.jpg"
+    },
+    {
+        name: "Smoothie de Fresa",
+        price: "$4.50",
+        image: "https://imag.bonviveur.com/smoothie-de-fresa.webp"
+    },
+    {
+        name: "Coca-Cola",
+        price: "$1.50",
+        image: "https://laconstancia.com/wp-content/uploads/2021/12/3.-Lata-Sabor-Sin-Azucar-237ml.png",
+    },
+    {
+        name: "Agua",
+        price: "$1.00",
+        image: "https://sula.hn/wp-content/uploads/2020/04/02-sula-botella-agua-1-litro.jpg"
+    },
+    {
+        name: "Pepsi",
+        price: "$1.30",
+        image: "https://walmartsv.vtexassets.com/arquivos/ids/452533-1200-900?v=638518377718130000&width=1200&height=900&aspect=true"
+    }
+];
+
+const menuContainer = document.getElementById('drink-menu');
+
+drinks.forEach(drink => {
+    const drinkItem = document.createElement('div');
+    drinkItem.classList.add('drink-item');
+
+    drinkItem.innerHTML = `
+        <img src="${drink.image}" alt="${drink.name}">
+        <div class="details">
+            <h2>${drink.name}</h2>
+            <p class="price">${drink.price}</p>
+        </div>
+    `;
+
+    menuContainer.appendChild(drinkItem);
+});
+
+    </script>
+
+    <style>
+        
+
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #e0f7fa;
+    background-image: url('https://www.transparenttextures.com/patterns/palm-tree.png');
+    margin: 0;
+    padding: 20px;
+    color: #004d40;
+}
+
+.menu-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #ffffffcc;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #00796b;
+}
+
+.drink-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.drink-item img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-right: 20px;
+}
+
+.drink-item .details {
+    flex: 1;
+}
+
+.drink-item .details h2 {
+    margin: 0 0 10px;
+    color: #004d40;
+}
+
+.drink-item .details p {
+    margin: 0;
+    color: #00796b;
+}
+
+.drink-item .details .price {
+    font-size: 18px;
+    color: #d32f2f;
+    margin-top: 5px;
+}
+
+    </style>
+</body>
+</html>
+
